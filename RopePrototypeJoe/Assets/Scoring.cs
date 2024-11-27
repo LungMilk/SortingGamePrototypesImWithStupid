@@ -53,6 +53,10 @@ public class Scoring : MonoBehaviour
             {
                 //hopefully add something that shows the incrementation.
                 checker++;
+
+                //doesnt work if multiple
+                scoringConditions[i].goalPrereq.color = Color.red;
+                break;
             }
             else
             {
