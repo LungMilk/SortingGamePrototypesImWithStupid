@@ -18,14 +18,14 @@ public class Playermovement : MonoBehaviour
         //still use the same input.get axis values however it is a step
         if (isP2)
         {
-            x = Input.GetAxis("HorizontalP2");
-            y = Input.GetAxis("VerticalP2");
-            transform.position += new Vector3(x * speed * Time.deltaTime, y * speed * Time.deltaTime);
+            direction.x = Input.GetAxis("HorizontalP2");
+            direction.y = Input.GetAxis("VerticalP2");
+            transform.position += new Vector3(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime);
         }else
         {
-            x = Input.GetAxis("Horizontal");
-            y = Input.GetAxis("Vertical");
-            transform.position += new Vector3(x * speed * Time.deltaTime, y * speed * Time.deltaTime);
+            direction.x = Input.GetAxis("Horizontal");
+            direction.y = Input.GetAxis("Vertical");
+            transform.position += new Vector3(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime);
         }
         //rb.AddForce(direction * speed);
     }
