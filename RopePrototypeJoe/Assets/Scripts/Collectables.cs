@@ -9,7 +9,7 @@ public class Collectables : MonoBehaviour
 
     public int type;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetImages();

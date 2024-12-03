@@ -19,9 +19,15 @@ public class ConveyorBeltSpawn : MonoBehaviour
     //objects need to destroy offscreen but not based on time.
     // Start is called before the first frame update
     //objects are spawned on a modifyable time frame.
-    private void Update()
+    protected virtual void Update()
     {
         //spawn objects on a modifiable time frame
+        spawnConditionals();
+
+    }
+
+    protected virtual void spawnConditionals()
+    {
         spawnDelay++;
         print(spawnDelay * Time.deltaTime);
         if (spawnDelay * Time.deltaTime >= spawnRate)
@@ -29,9 +35,9 @@ public class ConveyorBeltSpawn : MonoBehaviour
             spawnObjects();
             spawnDelay = 0;
         }
-
     }
-    void spawnObjects()
+
+    protected virtual void spawnObjects()
     {
         float scalar = Random.Range(0.1f, 0.9f);
         print(scalar);
